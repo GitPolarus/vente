@@ -10,8 +10,11 @@
 
 <body>
     <ul>
-        <?php while($row = $res->fetch(PDO::FETCH_ASSOC)){
-    echo "<li>$row[nom]</li>";
+        <?php
+        include_once "Models/Client.php";
+        while($row = $res->fetch(PDO::FETCH_ASSOC)){
+            $client = new Client($row['id'], $row['nom']);
+     echo "<li> id: $client->id | $client->name</li>";
     }?>
     </ul>
 </body>
