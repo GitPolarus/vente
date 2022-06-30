@@ -1,27 +1,41 @@
 <?php
-
+namespace Models;
 /**
- * Client Model
- * Represent Client table in the database vente
+ * Client Model representing the Client Entity 
  */
 class Client{
     /**
-     * name : name of the client
-     *
-     * @var string
-     */
-    public string $name;
-
-    /**
-     * id : the primary key and identifier of the user
+     * id: unique identifier of the client
      *
      * @var integer
      */
     public int $id;
+
+    /**
+     * name: the name of the client
+     *
+     * @var string
+     */
+    public string $name;
     
-    public function  __construct(int $id, string $name)
+    /**
+     * __construct of Client
+     *
+     * @param  int $id
+     * @param  string $name
+     * @return void
+     */
+    public function __construct(int $id, string $name)
     {
         $this->id = $id;
         $this->name = $name;
+    }
+
+    public function __toString()
+    {
+        return "Client {
+         id : $this->id |    
+         name: $this->name
+        }<br/>";
     }
 }

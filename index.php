@@ -1,3 +1,2 @@
 <?php
-  require_once 'Controllers/controller.php';
-?>
+require "Controllers/controller.php";

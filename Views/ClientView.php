@@ -9,14 +9,10 @@
 </head>
 
 <body>
-    <ul>
-        <?php
-        include_once "Models/Client.php";
-        while($row = $res->fetch(PDO::FETCH_ASSOC)){
-            $client = new Client($row['id'], $row['nom']);
-     echo "<li> id: $client->id | $client->name</li>";
-    }?>
-    </ul>
+    <?php foreach($clientTable as $client){
+        echo $client->__toString();
+    }
+?>
 </body>
 
 </html>
